@@ -1,0 +1,52 @@
+nav ul li{
+	display: block;
+	padding: 2%;
+}
+nav ul:first-child{
+	flex-basis:100%;
+}
+nav ul:first-child li{
+    display:block; 
+}
+nav ul:first-child li:hover{
+    background:none;
+}
+nav ul:last-child{
+    flex-basis: 100%;
+}
+nav ul:last-child li{
+    float:none;
+    text-align: start;
+}
+nav ul:last-child li a{
+    display: inline-block;
+    width: 100%;
+}
+nav ul:last-child li a:hover{
+    background-color: red;
+}
+.collapse-button{
+    display:inline;
+	float:right;
+	font-size:150%;
+}
+nav ul:last-child{
+    display:none;
+}
+
+
+/*  GET STARTED */
+.get .get-started-container{
+	border-radius: 25px;
+    display:grid;
+    grid-template-columns: 1fr;
+}
+#get-started-btn{
+   width:100%; 
+}
+
+/*	GET STARTED DISPLAY ELEMENTS	*/
+.con{
+	display:grid;
+	grid-template-columns:1fr;
+}

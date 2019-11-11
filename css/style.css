@@ -1,0 +1,432 @@
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+
+
+
+
+/* FOR NAV BAR */
+.fixed-navbar{
+	display: none;
+	z-index: 1;
+	position: fixed;
+	width: 100%;
+	top:0;
+}
+.fixed-navbar ul{
+	display: flex;
+	justify-content: space-around;
+	background-color: rgb(2, 2, 2);
+}
+.fixed-navbar ul li{
+	padding:1%;
+	box-sizing: border-box;
+}
+.fixed-navbar ul li:hover{
+	background-color: red;
+	color:white;
+}
+.fixed-navbar ul li a{
+	text-decoration: none;
+	color:white;
+}
+
+
+
+
+.nav-bars{
+	background-color: rgb(2, 2, 2);
+	width:100%;
+	box-sizing: content-box;
+}
+nav{
+	padding:2%;
+	display:flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	background-color: rgba(207, 192, 192, 0.068);
+	box-sizing: border-box;
+	border-radius: 25px 25px;
+}
+nav ul{
+	padding: 2%;
+	box-sizing: border-box;
+}
+nav ul li{
+	display: inline;
+	padding: 2%;
+	font-size: 120%;
+}
+nav ul li:hover{
+	background-color: red;
+}
+nav ul li a{
+	text-decoration: none;
+	color:white;
+}
+nav ul li a:hover{
+	color:white;
+}
+nav ul:first-child{
+	align-self: flex-start;
+	padding: 2%;
+	flex-basis:45%;
+	font-size: 120%;
+}
+nav ul:first-child li{
+	display:inline;
+}
+nav ul:first-child{
+	color:white;
+}
+nav ul:first-child li a{
+	color:white;
+} 
+nav ul:first-child li .collapse-button{
+	color:rgb( 222,222,222);
+	border: thin solid rgb( 222,222,222);
+	padding: 5px;
+}
+nav ul:last-child{
+	align-self: flex-end;
+	padding:2%;
+	flex-basis: 45%;
+	text-align: end;
+	display:block;
+}
+.collapse-button{
+	display:none;
+}
+nav ul:last-child{
+	display:block;
+}
+
+
+/*************************************************************************************/
+/*	CONTIANER	*/
+.search-container{
+	display:none;
+	color:white;
+	width:100%;
+	box-sizing: border-box;
+}
+
+/* SEARCH BOX */
+.search-box{
+	padding:5px 5px;
+	width:100%;
+	box-sizing: border-box;
+	text-align:center;
+	height:50px;
+	box-sizing: border-box;
+	word-wrap: break-word;
+	-ms-word-wrap: break-word;
+}
+.search-box input{
+	height:100%;
+	width:50%;
+	outline:none;
+	border:none;
+	font-size:150%;	
+	border-bottom: 3px solid rgb(235, 10, 10);
+}
+.search-box #search-btn{
+	height:100%;
+	border-radius: 0px 20px 20px 0px;
+	background-color: rgb(235, 10, 10);
+	color:white;
+	border:thin solid white;
+	cursor: pointer;
+	font-size: 150%;
+	color:white;	
+}
+
+
+
+
+
+/****************************************************************888/
+/*GET STARTED */
+.get{
+	display:flex;
+	justify-content: center;
+}
+.get .get-started-container{
+	border-radius: 25px;
+	display:flex;
+}
+
+#live-location-btn{
+	cursor:pointer;
+	padding:2%;
+	color:white;
+	border-radius: 25px;
+	border:thin solid black;
+	background-color:rgb(235, 10, 10);
+	width: 100%;
+	outline: none;
+}
+
+#get-started-btn{
+	cursor:pointer;
+	padding:2%;
+	color:black;
+	border-radius: 25px;
+	border:thin solid black;
+	color:white;
+	background-color:rgb(235, 10, 10);
+	width:100%;
+	outline:none;
+}
+
+
+
+
+/****************************************************************/
+
+
+
+/***********************************************************************888/
+DIV WITH BACKGROUND
+*/
+.div-with-background{
+	background-image:url(../images/background.jpg);
+	height:400px;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	opacity: 1;
+	color:white;
+	font-size:300%;
+	transition:1s;
+}
+.div-with-background:hover{
+	opacity:1;
+}
+
+
+/*.div-with-background div{
+	text-align:center;
+}*/
+.div-with-background button{
+	cursor: pointer;
+	background-color: rgb(235, 10, 10);
+	color:white;
+}
+.div-with-background button:first-child{
+	float:left;
+
+}
+.div-with-background button:last-child{
+	float:right;
+}
+.info{
+	text-align:center; 
+	color:white;
+	padding:2%;
+	text-shadow: 3px 3px 3px rgb(235, 10, 10);
+	background:radial-gradient(red, black);
+	font-size: 200%; 
+}
+
+
+
+
+
+/*	GET STARTED DISPLAY ELEMENTS	*/
+.con{
+	margin-top:2%;
+	display:grid;
+	grid-template-columns:1fr 3fr;
+}
+.definition{
+	color: black;
+	border:thin solid rgb(231, 222, 222);
+}
+.definition header{
+	text-transform: Capitalize;
+	padding:2%;
+	box-sizing: border-box;
+	background-color: rgb(2,2,2);
+	font-size:150%;
+}
+.definition header span:first-child{
+	color:white;
+}
+.definition button#cavet-down{
+	cursor:pointer;
+	background-color:rgb(235, 10, 10);
+	text-align:right;
+	display:inline-block;
+	float:right;
+	color:white;
+	border:none;
+}
+.cavet-toggle{
+	transform:rotate(180deg);
+}
+
+.definition .list-container{
+	display: none;
+	clear:both;
+	padding:3%;
+}
+.definition .list-container div{
+	border-bottom:thin solid rgb(231, 222, 222);
+	margin:2%;
+	padding:3%;
+	color:black;
+	background-color:rgb(231, 222, 222) ;
+	box-shadow: 0px 3px 2px 2px black;
+}
+
+.con button{
+	cursor:pointer;
+	background-color:rgb(235, 10, 10);
+	text-align:right;
+	display:inline-block;
+	float:right;
+	color:white;
+	border:none;
+}
+.weather .weather-header{
+	padding: 4%;
+	color:black;
+}
+.weather .weather-header:hover{
+	background-color: rgb(235, 10, 10);
+	color:white;
+}
+.weather .weather-content{
+	display:none;
+	border:3px solid rgb(235, 10, 10);
+}
+
+.temperature .temperature-header{
+	padding: 4%;
+	color:black;
+}
+.temperature .temperature-header:hover{
+	background-color: rgb(235, 10, 10);
+	color:white;
+}
+.temperature .temperature-content{
+	display:none;
+	border:3px solid rgb(235, 10, 10);
+}
+
+.wind .wind-header{
+	padding: 4%;
+	color:black;
+}
+.wind .wind-header:hover{
+	background-color: rgb(235, 10, 10);
+	color:white;
+}
+.wind .wind-content{
+	display:none;
+	border:3px solid rgb(235, 10, 10);
+}
+
+.humidity .humidity-header{
+	padding: 4%;
+	color:black;
+}
+.humidity .humidity-header:hover{
+	background-color: rgb(235, 10, 10);
+	color:white;
+}
+.humidity .humidity-content{
+	display:none;
+	border:3px solid rgb(235, 10, 10);
+}
+
+
+
+
+/*************************************************************************************************/
+/*************************	 RESULT RESULT	*************************/
+.place{
+	color:green;
+	text-decoration:underline;
+}
+.description{
+	color:green;
+}
+
+.error{
+	display: none;
+	color:red;
+	padding:3%;
+	border:thin solid rgb(231, 222, 222);
+	text-align: center;
+	font-weight: bolder;
+	background-color:rgb(231, 222, 222)
+}
+.temp{
+	clear:both;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
