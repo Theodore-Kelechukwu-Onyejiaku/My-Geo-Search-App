@@ -204,32 +204,34 @@
                             tempScale.name = "tempScale"
                         let option1 = document.createElement("option");
                         let option2 = document.createElement("option");
+                        let buttonFunct = document.createElement("button");
 
                         option1.value = "celcius"
                         option1.textContent = "CELCIUS"
                         option2.value = "fahrenheit"
-                        option2.textContent = "FAHRENHEIT"
+                        option2.textContent = "FAHRENHEIT";
+                        buttonFunct.value = "Change to";
+                        buttonFunct.onclick="convert()";
                         let newBr = document.createElement("br");
-
+                        
+                        tempDiv.appendChild(buttonFunct);
                         tempScale.appendChild(option1);
                         tempScale.appendChild(option2);
                         console.log(tempScale);
-                        tempScale.addEventListener("change", (event)=>{
-                            if(event.target.value === "celcius"){
-                               tempDiv.text("Temperature result: \t"+temp+"C")
-                               tempDiv.append($("<br>"))
-                               tempDiv.append(tempScale); 
-                            }else{
-                                let newFah = Math.floor((temp * 9/5) + 32);
-                                tempDiv.text("Temperature result: \t"+newFah+"F")
+                        //tempScale.addEventListener("change", (event)=>{
+                        const convert = ()=>{
+                            if(tempScale.value === "celcius"){
+                                tempDiv.text("Temperature result: \t"+temp+"C")
                                 tempDiv.append($("<br>"))
-                                tempDiv.append(tempScale);
-                            }
-
-                           
-
-                           
-                        })
+                                tempDiv.append(tempScale); 
+                             }else{
+                                 let newFah = Math.floor((temp * 9/5) + 32);
+                                 tempDiv.text("Temperature result: \t"+newFah+"F")
+                                 tempDiv.append($("<br>"))
+                                 tempDiv.append(tempScale);
+                             }
+                        }
+            
 
                         tempDiv.append(newBr);
                         tempDiv.append(tempScale);
