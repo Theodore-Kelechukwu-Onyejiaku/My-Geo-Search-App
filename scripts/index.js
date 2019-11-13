@@ -206,35 +206,41 @@
                         let option2 = document.createElement("option");
                         let buttonFunct = document.createElement("button");
 
+
                         option1.value = "celcius"
                         option1.textContent = "CELCIUS"
                         option2.value = "fahrenheit"
                         option2.textContent = "FAHRENHEIT";
-                        buttonFunct.value = "Change to";
-                        buttonFunct.onclick="convert()";
+                        buttonFunct.textContent = "Change to";
+                        buttonFunct.style.float = "none";
+                        buttonFunct.style.padding = "5px";
+                        buttonFunct.style.border = "thin solid black"
                         let newBr = document.createElement("br");
                         
-                        tempDiv.appendChild(buttonFunct);
+                        
                         tempScale.appendChild(option1);
                         tempScale.appendChild(option2);
-                        console.log(tempScale);
+                       
                         //tempScale.addEventListener("change", (event)=>{
-                        const convert = ()=>{
+                        buttonFunct.addEventListener("click", ()=>{
                             if(tempScale.value === "celcius"){
                                 tempDiv.text("Temperature result: \t"+temp+"C")
-                                tempDiv.append($("<br>"))
-                                tempDiv.append(tempScale); 
+                                tempDiv.append($("<br>"));
+                                tempDiv.append(buttonFunct);
+                                tempDiv.append(tempScale);
                              }else{
                                  let newFah = Math.floor((temp * 9/5) + 32);
                                  tempDiv.text("Temperature result: \t"+newFah+"F")
-                                 tempDiv.append($("<br>"))
-                                 tempDiv.append(tempScale);
+                                 tempDiv.append($("<br>"));
+                                 tempDiv.append(buttonFunct);
+                                 tempDiv.append(tempScale);         
                              }
-                        }
-            
-
+                        });
+                       
                         tempDiv.append(newBr);
+                        tempDiv.append(buttonFunct);
                         tempDiv.append(tempScale);
+                        console.log(tempDiv.html());
                         
 
                         let descriptionImage = $("<img>").attr("src", icon);
