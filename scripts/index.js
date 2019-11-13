@@ -1,5 +1,3 @@
-(function() {
-    
     //DOM DOM DOM
     const mainNavs = $(".nav-bars")
     const fixedNav = $(".fixed-navbar");
@@ -13,7 +11,7 @@
     const getStartedDefinitions = $(".get-started");
     const cavetDown = $("#cavet-down");
     const getStartedCont = $(".get");
-    const location = $("#location");
+    const lct = $("#location");
 
 
     //SIDE BAR DOM
@@ -31,6 +29,10 @@
     const nextButton = $("#next");
     const prevButton = $("#prev");
 
+
+
+    //Weather Reports DOM
+    const results = $(".results");
 
 
 
@@ -55,12 +57,12 @@
 /***************************        NAV BAR AND VISIBILITY      ********************************************/
     
    window.addEventListener("scroll", function() {
-        if(pageYOffset > 75){
+        if(pageYOffset){
             mainNavs.css("display", "none");
             fixedNav.css("display", "block");
             getStartedCont.css("marginTop", "5%");
             console.log("I am greater than 75");
-        }else if(pageYOffset < 5){
+        }else{
              mainNavs.css("display", "block");
             fixedNav.css("display", "none");
             getStartedCont.css("marginTop", "0%");
@@ -85,8 +87,9 @@
     
     //FUNCTION FOR GETSTARTED
     getStarted.click(() =>{
+
         searchContainer.slideToggle(100);
-        divWithBackground.slideToggle(1000);
+        divWithBackground.slideToggle(0.5);
         getStartedDefinitions.slideUp(1000);
     })
     
@@ -146,37 +149,125 @@
     //SEARCH BUTTON FUNCTION
     searchButton.click(()=>{
         $(".error").hide();
-        const mapId = "30ee7c92007cd37d56e1d381a4707e6a"
+        results.hide();
+        results.empty();
+        const mapId = "30ee7c92007cd37d56e1d381a4707e6a";
         
 
-        fetch("http://api.openweathermap.org/data/2.5/weather?q="+location.val()+"&APPID="+mapId)
+        fetch("http://api.openweathermap.org/data/2.5/weather?q="+lct.val()+"&units=metric&APPID="+mapId)
         .then((data) => {
             console.log(data);
             data.json()
                     .then((recievedData) => {
                         console.log(recievedData);
-                        if(recievedData.message){
+                        if(recievedData.message){   //IF there is a 404 message then this block of code will execute
+                            results.textContent = "";
+                            let img = document.createElement("img");
+                            img.src = "./images/404.png";
+                            $(img).css({
+                                "width": "100%",
+                                "height": "100%",
+                            });
                             console.log("city not found");
                              $(".error").text("Ooops! "+recievedData.message).show();
-                        }else{
-                        var place = recievedData.name;
-                        var icon = "http://openweathermap.org/img/w/"+recievedData.weather[0].icon+".png";
-                        var desc = recievedData.weather[0].description;
-                        var temp = recievedData.main.temp;
+                             $(".error").append(img);
+                        }else{ 
+                        $(".error").text("");
+                        console.log("I have recieved the data");
+                        $(".results").show(); 
 
-                        $(".icon").attr("src", icon);
-                        $(".description").text(desc);
-                        $(".place").text("Search result for:\t"+place) 
-                        $ (".temp").text("Temperature result:\t"+temp)
+
+
+                        let place = recievedData.name;
+                        let icon = "http://openweathermap.org/img/w/"+recievedData.weather[0].icon+".png";
+                        let desc = recievedData.weather[0].description;
+                        let temp = recievedData.main.temp;
+                        let country = recievedData.sys.country;
+                        let wind = recievedData.wind.speed;
+                        let humidity = recievedData.main.humidity;
+                        let longitude = recievedData.coord.lon;
+                        let latitude = recievedData.coord.lat;
+                        let pressure = recievedData.main.pressure;
+
+                       
+                        
+
+                        
+
+
+                        let descriptionDiv = $("<div></div>").text(desc);
+                        let tempDiv = $("<div></div>").text("Temperature result: \t"+temp+"C");
+                        
+
+                         //For temperature conversion
+                        let tempScale = document.createElement("select");
+                            tempScale.name = "tempScale"
+                        let option1 = document.createElement("option");
+                        let option2 = document.createElement("option");
+
+                        option1.value = "celcius"
+                        option1.textContent = "CELCIUS"
+                        option2.value = "fahrenheit"
+                        option2.textContent = "FAHRENHEIT"
+                        let newBr = document.createElement("br");
+
+                        tempScale.appendChild(option1);
+                        tempScale.appendChild(option2);
+                        console.log(tempScale);
+                        tempScale.addEventListener("change", (event)=>{
+                            if(event.target.value === "celcius"){
+                               tempDiv.text("Temperature result: \t"+temp+"C")
+                               tempDiv.append($("<br>"))
+                               tempDiv.append(tempScale); 
+                            }else{
+                                let newFah = Math.floor((temp * 9/5) + 32);
+                                tempDiv.text("Temperature result: \t"+newFah+"F")
+                                tempDiv.append($("<br>"))
+                                tempDiv.append(tempScale);
+                            }
+
+                           
+
+                           
+                        })
+
+                        tempDiv.append(newBr);
+                        tempDiv.append(tempScale);
+                        
+
+                        let descriptionImage = $("<img>").attr("src", icon);
+                        let iconDiv = $("<div></div>");
+                        let nameOfPlace = $("<div></div>").text("Weather report for: \t"+place);
+                        let nameOfCountry = $("<div></div>").text("Country code: \t"+country)
+                        let windDiv = $("<div></div>").text("Wind speed: \t"+wind+"m/s"); 
+                        let humidityDiv = $("<div></div>").text("Humidity: \t"+humidity+"%");
+                        let pressureDiv = $("<div></div>").text("Pressure :\t"+pressure+"hPa");
+                        let long_lat = $("<div></div>").text("Longitude: "+longitude+"\nLatitude: "+latitude);
+                            iconDiv.append(descriptionImage);
+
+
+                        results.append(nameOfPlace);
+                        results.append(nameOfCountry);
+                        results.append(iconDiv);
+                        results.append(descriptionDiv);
+                        results.append(tempDiv);
+                        results.append(windDiv);
+                        results.append(humidityDiv);
+                        results.append(pressureDiv);
+                        results.append(long_lat);
+                       
+
+
+                        
 
                         }
+
                         
                     })
         })
         .catch((error) => {
-            $(".error").text(error).show()
-            error = "Please check your connection or try again";
+           $(".error").text(error).show();
             console.log(error);
+            $(".error").text(error+"!!! Please check your internet connection").show()
         })
     })
-})();
