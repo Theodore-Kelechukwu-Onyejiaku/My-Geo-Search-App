@@ -66,9 +66,10 @@ table {
 .fixed-navbar ul li{
 	padding:1%;
 	box-sizing: border-box;
+	background-color: red;
+	color: rgba(11,11,11);
 }
 .fixed-navbar ul li:hover{
-	background-color: red;
 	color:white;
 }
 .fixed-navbar ul li a{
@@ -102,7 +103,7 @@ nav ul li{
 	padding: 2%;
 	font-size: 120%;
 }
-nav ul li:hover{
+nav ul:last-child li:hover{
 	background-color: red;
 }
 nav ul li a{
@@ -120,6 +121,9 @@ nav ul:first-child{
 }
 nav ul:first-child li{
 	display:inline;
+}
+nav ul:first-child li:hover{
+    background:none;
 }
 nav ul:first-child{
 	color:white;
@@ -210,6 +214,7 @@ nav ul:last-child{
 	background-color:rgb(235, 10, 10);
 	width: 100%;
 	outline: none;
+	height: 100%;
 }
 
 #get-started-btn{
@@ -222,6 +227,7 @@ nav ul:last-child{
 	background-color:rgb(235, 10, 10);
 	width:100%;
 	outline:none;
+	height:100%;
 }
 
 
@@ -244,6 +250,7 @@ DIV WITH BACKGROUND
 	color:white;
 	font-size:300%;
 	transition:1s;
+	word-wrap: break-word;
 }
 .div-with-background:hover{
 	opacity:1;
@@ -271,7 +278,7 @@ DIV WITH BACKGROUND
 	padding:2%;
 	text-shadow: 3px 3px 3px rgb(235, 10, 10);
 	background:radial-gradient(red, black);
-	font-size: 200%; 
+	font-size: 150%;
 }
 
 
@@ -282,7 +289,9 @@ DIV WITH BACKGROUND
 .con{
 	margin-top:2%;
 	display:grid;
-	grid-template-columns:1fr 3fr;
+	grid-template-columns:1fr;
+	justify-content: center;
+	align-items: center;
 }
 .definition{
 	color: black;
@@ -391,24 +400,47 @@ DIV WITH BACKGROUND
 
 /*************************************************************************************************/
 /*************************	 RESULT RESULT	*************************/
-.place{
+
+.results{
+	background-color: rgb(231, 222, 222);
+	margin:5px;
+	box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+	display:none;
+	text-align: center;
+	margin:auto auto;
+	width:50%;
+	}
+
+.results div{
 	color:green;
-	text-decoration:underline;
+	font-size: 150%;
+	padding: 2%;
 }
-.description{
-	color:green;
+.results div:hover{
+	background-color: grey;
+	color:white;
+}
+#place{
+	text-decoration:underline;
+	font-size: 200%;
+}
+#icon{
+	display: none;
 }
 
 .error{
 	display: none;
 	color:red;
-	padding:3%;
+	padding:2%;
 	border:thin solid rgb(231, 222, 222);
 	text-align: center;
 	font-weight: bolder;
-	background-color:rgb(231, 222, 222)
+	background-color:rgb(231, 222, 222);
+	box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+	margin: auto auto;
+	width:50%;
 }
-.temp{
+#temp{
 	clear:both;
 }
 
