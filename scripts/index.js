@@ -224,13 +224,13 @@
                         //tempScale.addEventListener("change", (event)=>{
                         buttonFunct.addEventListener("click", ()=>{
                             if(tempScale.value === "celcius"){
-                                tempDiv.text("Temperature result: \t"+temp+"C")
+                                tempDiv.text("Temperature result is: \t"+temp+"C")
                                 tempDiv.append($("<br>"));
                                 tempDiv.append(buttonFunct);
                                 tempDiv.append(tempScale);
                              }else{
                                  let newFah = Math.floor((temp * 9/5) + 32);
-                                 tempDiv.text("Temperature result: \t"+newFah+"F")
+                                 tempDiv.text("Temperature result is: \t"+newFah+"F")
                                  tempDiv.append($("<br>"));
                                  tempDiv.append(buttonFunct);
                                  tempDiv.append(tempScale);         
