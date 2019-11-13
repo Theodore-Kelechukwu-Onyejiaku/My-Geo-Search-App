@@ -50,3 +50,11 @@ nav ul:last-child{
 	display:grid;
 	grid-template-columns:1fr;
 }
+.results{
+    width:100%;
+    margin: 0;
+}
+
+.error{
+    width: 90%;,
+}
