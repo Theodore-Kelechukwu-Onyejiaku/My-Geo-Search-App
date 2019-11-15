@@ -279,3 +279,13 @@
             $(".error").text(error+"!!! Please check your internet connection").show()
         })
     })
+
+    
+
+    //LOADING OF MAP
+    const myIframe = document.getElementById("myFrame");
+    const mapButton = document.querySelector(".checkMap");
+
+    mapButton.addEventListener(("click"), ()=>{
+        mapButton.href = "https://www.mapquestapi.com/staticmap/v5/map?locations="+lct.value+"+owerri&size=@2x&zoom=13&defaultMarker=marker-md-3B5998-22407F&key=Myya51vtIvyWZhqpdstw4NGWttm3PYxc";
+    })
