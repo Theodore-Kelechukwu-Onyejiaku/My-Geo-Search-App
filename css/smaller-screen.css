@@ -36,16 +36,23 @@ nav ul:last-child{
 
 
 /*  GET STARTED */
+.get{
+    margin:2%;
+}
 .get .get-started-container{
 	border-radius: 25px;
     display:grid;
     grid-template-columns: 1fr;
 }
 #get-started-btn{
-   width:100%; 
+   width:100%;
+   padding:5%;
 }
 
 /*	GET STARTED DISPLAY ELEMENTS	*/
+.definition{
+    width:100%;
+}
 .con{
 	display:grid;
 	grid-template-columns:1fr;
