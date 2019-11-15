@@ -199,6 +199,7 @@ nav ul:last-child{
 .get{
 	display:flex;
 	justify-content: center;
+	margin:2%;
 }
 .get .get-started-container{
 	border-radius: 25px;
@@ -210,24 +211,32 @@ nav ul:last-child{
 	padding:2%;
 	color:white;
 	border-radius: 25px;
-	border:thin solid black;
-	background-color:rgb(235, 10, 10);
+	color:red;
+	background-color:white;
+	border:thin solid red;
 	width: 100%;
 	outline: none;
 	height: 100%;
 }
+#live-location-btn:hover{
+	background-color:red;
+	border:thin solid red;
+	color:white;
+}
 
 #get-started-btn{
 	cursor:pointer;
-	padding:2%;
-	color:black;
 	border-radius: 25px;
-	border:thin solid black;
-	color:white;
-	background-color:rgb(235, 10, 10);
+	color:red;
+	background-color:white;
+	border:thin solid red;
 	width:100%;
 	outline:none;
 	height:100%;
+}
+#get-started-btn:hover{
+	background-color:red;
+	color:white;
 }
 
 
@@ -284,55 +293,6 @@ DIV WITH BACKGROUND
 
 
 
-
-/*	GET STARTED DISPLAY ELEMENTS	*/
-.con{
-	margin-top:2%;
-	display:grid;
-	grid-template-columns:1fr;
-	justify-content: center;
-	align-items: center;
-}
-.definition{
-	color: black;
-	border:thin solid rgb(231, 222, 222);
-}
-.definition header{
-	text-transform: Capitalize;
-	padding:2%;
-	box-sizing: border-box;
-	background-color: rgb(2,2,2);
-	font-size:150%;
-}
-.definition header span:first-child{
-	color:white;
-}
-.definition button#cavet-down{
-	cursor:pointer;
-	background-color:rgb(235, 10, 10);
-	text-align:right;
-	display:inline-block;
-	float:right;
-	color:white;
-	border:none;
-}
-.cavet-toggle{
-	transform:rotate(180deg);
-}
-
-.definition .list-container{
-	display: none;
-	clear:both;
-	padding:3%;
-}
-.definition .list-container div{
-	border-bottom:thin solid rgb(231, 222, 222);
-	margin:2%;
-	padding:3%;
-	color:black;
-	background-color:rgb(231, 222, 222) ;
-	box-shadow: 0px 3px 2px 2px black;
-}
 
 .con button{
 	cursor:pointer;
@@ -400,7 +360,13 @@ DIV WITH BACKGROUND
 
 /*************************************************************************************************/
 /*************************	 RESULT RESULT	*************************/
-
+.con{
+	margin-top:2%;
+	display:grid;
+	grid-template-columns:1fr;
+	justify-content: center;
+	align-items: center;
+}
 .results{
 	background-color: rgb(231, 222, 222);
 	margin:5px;
@@ -442,6 +408,32 @@ DIV WITH BACKGROUND
 }
 #temp{
 	clear:both;
+}
+
+/***********************************************/
+/*	check map */
+div.checkDiv{
+	display: flex;
+	justify-content:center;
+	margin-top:5%;
+}
+div.checkDiv .checkMap{
+	background-color:white;
+	color:red;
+	padding:1%;
+	border-radius: 25px;
+	border:thin solid red;
+}
+div.checkDiv .checkMap:hover{
+	background-color:red;
+	border:none;
+	color:white;
+	cursor:pointer;
+}
+
+#myFrame{
+	width:60%;
+	margin:auto auto;
 }
 
 
