@@ -26,6 +26,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	overflow: auto;
 }
 ol, ul {
 	list-style: none;
@@ -64,7 +65,7 @@ table {
 	background-color: rgb(2, 2, 2);
 }
 .fixed-navbar ul li{
-	padding:1%;
+	padding:2%;
 	box-sizing: border-box;
 	background-color: red;
 	color: rgba(11,11,11);
@@ -82,11 +83,11 @@ table {
 
 .nav-bars{
 	background-color: rgb(2, 2, 2);
-	width:100%;
 	box-sizing: content-box;
+	margin-right:3%;
+	margin-left:3%;
 }
 nav{
-	padding:2%;
 	display:flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
@@ -204,6 +205,7 @@ nav ul:last-child{
 .get .get-started-container{
 	border-radius: 25px;
 	display:flex;
+	margin-top: 1%;
 }
 
 #live-location-btn{
@@ -252,6 +254,7 @@ DIV WITH BACKGROUND
 .div-with-background{
 	background-image:url(../images/background.jpg);
 	height:400px;
+	margin:0px 15%;
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -269,7 +272,7 @@ DIV WITH BACKGROUND
 /*.div-with-background div{
 	text-align:center;
 }*/
-.div-with-background button{
+ .div-with-background button{
 	cursor: pointer;
 	background-color: rgb(235, 10, 10);
 	color:white;
@@ -282,12 +285,14 @@ DIV WITH BACKGROUND
 	float:right;
 }
 .info{
+	margin: 0px 15%;
 	text-align:center; 
 	color:white;
-	padding:2%;
+	padding:1%;
 	text-shadow: 3px 3px 3px rgb(235, 10, 10);
 	background:radial-gradient(red, black);
 	font-size: 150%;
+	word-wrap: break-word;
 }
 
 
@@ -415,7 +420,7 @@ DIV WITH BACKGROUND
 div.checkDiv{
 	display: flex;
 	justify-content:center;
-	margin-top:5%;
+	margin-top:1%;
 }
 div.checkDiv .checkMap{
 	background-color:white;
@@ -423,16 +428,20 @@ div.checkDiv .checkMap{
 	padding:1%;
 	border-radius: 25px;
 	border:thin solid red;
+	cursor:pointer;
 }
 div.checkDiv .checkMap:hover{
 	background-color:red;
 	border:none;
+	padding:1%;
 	color:white;
 	cursor:pointer;
 }
 
 #myFrame{
 	width:80%;
+	min-width: 200px;
+	border:none;
 	height: 500px;
 }
 

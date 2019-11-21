@@ -1,3 +1,5 @@
+
+    
     //DOM DOM DOM
     const mainNavs = $(".nav-bars")
     const fixedNav = $(".fixed-navbar");
@@ -14,17 +16,6 @@
     const lct = $("#location");
 
 
-    //SIDE BAR DOM
-    const weatherContent = $(".weather-content")
-    const weatherButton = $("#weather-button");
-    const temperatureContent = $(".temperature-content");
-    const temperatureButton = $("#temperature-button");
-    const windContent = $(".wind-content");
-    const windButton = $("#wind-button");
-    const humidityContent = $(".humidity-content");
-    const humidityButton = $("#humidity-button");
-
-
     //SLIDING DOM
     const nextButton = $("#next");
     const prevButton = $("#prev");
@@ -36,31 +27,12 @@
 
 
 
-
-/********************************           FOR SIDE BAR     *************************************************************************************(*/
-    weatherButton.click(()=>{
-        weatherContent.slideToggle(500);
-    }) 
-    temperatureButton.click(() =>{
-        temperatureContent.slideToggle(500);
-    })
-    windButton.click(() =>{
-        windContent.slideToggle(500);
-    })
-    humidityButton.click(() =>{
-        humidityContent.slideToggle(500);
-    })
-
-/***********************************************************************************************************/
-
-
 /***************************        NAV BAR AND VISIBILITY      ********************************************/
     
    window.addEventListener("scroll", function() {
         if(pageYOffset){
             mainNavs.css("display", "none");
             fixedNav.css("display", "block");
-            getStartedCont.css("marginTop", "5%");
             console.log("I am greater than 75");
         }else{
              mainNavs.css("display", "block");
@@ -77,17 +49,10 @@
         navTwo.slideToggle(500);
     })
 
-    //FUNCTION FOR DROP DOWN OF WEATHER, TEMPERATURE AND SO ON
-    var angle = 0;
-    cavetDown.click( () =>{
-        angle+=180;
-       $(".list-container").slideToggle(500);
-       $(cavetDown).css("transform", "rotate("+angle+"deg)")
-    })
     
     //FUNCTION FOR GETSTARTED
     getStarted.click(() =>{
-
+        document.body.style.overflow = "scroll";
         searchContainer.slideToggle(100);
         divWithBackground.slideToggle(0.5);
         getStartedDefinitions.slideUp(1000);
@@ -286,6 +251,12 @@
     const myIframe = document.getElementById("myFrame");
     const mapButton = document.querySelector(".checkMap");
  
-    mapButton.addEventListener(("click"), ()=>{
-        mapButton.href = "https://www.mapquestapi.com/staticmap/v5/map?locations="+lct.value+"&size=@2x&zoom=13&defaultMarker=marker-md-3B5998-22407F&key=Myya51vtIvyWZhqpdstw4NGWttm3PYxc";
+    mapButton.addEventListener("click", ()=>{
+        mapButton.href = "https://www.mapquestapi.com/staticmap/v5/map?locations="+lct.val()+"&size=@2x&zoom=13&defaultMarker=marker-md-3B5998-22407F&key=Myya51vtIvyWZhqpdstw4NGWttm3PYxc";
     }) 
+
+
+
+
+
+    

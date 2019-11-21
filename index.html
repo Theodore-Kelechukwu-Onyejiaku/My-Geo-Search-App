@@ -14,7 +14,7 @@
 		<ul>
 			<li><a  href="index.html">Home</a></li>
 			<li><a href="#">About</a></li>
-			<li><a href="#">More</a></li>
+			<li><a href="pages/more.html">More</a></li>
 		</ul>
 	</div>
 	<!-- NAV BARS	-->
@@ -23,21 +23,15 @@
 			<ul>
 				<li><a href="#"><img src="images/logo.png" alt="globe" title="earth" width="40" height="40">Geo Search <span class="collapse-button">&#9776;</span></a></li>
 			</ul>
+			
 			<ul id="nav-two">
 				<li><a href="#">About</a></li>
 				<li><a href="#">Guide</a></li>
-				<li><a href="#">More...</a></li>
+				<li><a href="pages/more.html">More...</a></li>  
 			</ul>
 		</nav>
 	</div>
 
-	<!-- DIV DEFINITIONS	OR GET STARTED	-->
-	<div class="get">
-		<div class="get-started-container" >
-			<button id="get-started-btn">GET STARTED</button>
-			<button id="live-location-btn">CHECK LOCATION NOW!!!</button>
-		</div>
-	</div>
 	
 	<!-- SEARCH PART --> 
 	<div class="search-container">
@@ -55,6 +49,15 @@
 	</div>
 	<div class="info">Search for places around the world</div>
 
+	<!-- DIV DEFINITIONS	OR GET STARTED	-->
+	<div class="get">
+		<div class="get-started-container" >
+			<button id="get-started-btn">GET STARTED</button>
+			<button id="live-location-btn">CHECK LOCATION NOW!!!</button>
+		</div>
+	</div>
+
+
 	<!-- 	DISPLAY FOR CLICKED GET STARTED	-->
 	<div  class="con">
 		<div class="results">
@@ -64,10 +67,10 @@
 	</div>
 
 <!--	MAP RESULT MAP RESULT	-->
-	<div class="checkDiv"><a class="checkMap" target="mapFrame">Check Map</a></div>
-	<iframe	name="mapFrame" id="myFrame" width="50%"></iframe>
-
-	
+	<div class="checkDiv"><a target="mapFrame" class="checkMap"><button  type="submit">Check Map</button></a></div>
+	<center>
+		<iframe	name="mapFrame" id="myFrame" width="50%"></iframe>
+	</center>
 
 
 <!--	SCRIPTS SCRIPTS -->
