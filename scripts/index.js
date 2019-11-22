@@ -161,7 +161,7 @@
 
 
                         let descriptionDiv = $("<div></div>").text(desc);
-                        let tempDiv = $("<div></div>").text("Temperature result: \t"+temp+"C");
+                        let tempDiv = $("<div></div>").html("Temperature result: \t"+temp+"&#x2103;");
                         
 
                          //For temperature conversion
@@ -189,13 +189,13 @@
                         //tempScale.addEventListener("change", (event)=>{
                         buttonFunct.addEventListener("click", ()=>{
                             if(tempScale.value === "celcius"){
-                                tempDiv.text("Temperature result is: \t"+temp+"C")
+                                tempDiv.html("Temperature result is: \t"+temp+ "&#x2103;")
                                 tempDiv.append($("<br>"));
                                 tempDiv.append(buttonFunct);
                                 tempDiv.append(tempScale);
                              }else{
                                  let newFah = Math.floor((temp * 9/5) + 32);
-                                 tempDiv.text("Temperature result is: \t"+newFah+"F")
+                                 tempDiv.html("Temperature result is: \t"+newFah+"&#8457;")
                                  tempDiv.append($("<br>"));
                                  tempDiv.append(buttonFunct);
                                  tempDiv.append(tempScale);         

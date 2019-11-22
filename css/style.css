@@ -65,7 +65,7 @@ table {
 	background-color: rgb(2, 2, 2);
 }
 .fixed-navbar ul li{
-	padding:2%;
+	padding:3%;
 	box-sizing: border-box;
 	background-color: red;
 	color: rgba(11,11,11);
@@ -96,12 +96,10 @@ nav{
 	border-radius: 25px 25px;
 }
 nav ul{
-	padding: 2%;
 	box-sizing: border-box;
 }
 nav ul li{
 	display: inline;
-	padding: 2%;
 	font-size: 120%;
 }
 nav ul:last-child li:hover{
@@ -116,7 +114,6 @@ nav ul li a:hover{
 }
 nav ul:first-child{
 	align-self: flex-start;
-	padding: 2%;
 	flex-basis:45%;
 	font-size: 120%;
 }
@@ -149,6 +146,9 @@ nav ul:last-child{
 }
 nav ul:last-child{
 	display:block;
+}
+nav ul:last-child li{
+	margin: 5%;
 }
 
 
@@ -200,12 +200,10 @@ nav ul:last-child{
 .get{
 	display:flex;
 	justify-content: center;
-	margin:2%;
 }
 .get .get-started-container{
 	border-radius: 25px;
 	display:flex;
-	margin-top: 1%;
 }
 
 #live-location-btn{
@@ -222,7 +220,7 @@ nav ul:last-child{
 }
 #live-location-btn:hover{
 	background-color:red;
-	border:thin solid red;
+	border:3px solid red;
 	color:white;
 }
 
@@ -425,17 +423,21 @@ div.checkDiv{
 div.checkDiv .checkMap{
 	background-color:white;
 	color:red;
-	padding:1%;
 	border-radius: 25px;
 	border:3px solid red;
 	cursor:pointer;
+	text-decoration:none;
 }
-div.checkDiv .checkMap:hover{
-	background-color:red;
+.checkMap button{
+	background-color:transparent;
 	border:none;
-	padding:1%;
+	padding:2%;
+	color:red;
+	border-radius:25px;
+}
+.checkMap button:hover{
 	color:white;
-	cursor:pointer;
+	background-color: red;
 }
 
 #myFrame{
@@ -448,8 +450,16 @@ div.checkDiv .checkMap:hover{
 
 
 
-
-
+footer{
+	padding-top:1%;
+	position:fixed;
+	text-align:center;
+	background-color:black;
+	color:rgb(222,222,222);
+	width:100%;
+	bottom:0;
+	box-sizing: border-box;
+}
 
 
 

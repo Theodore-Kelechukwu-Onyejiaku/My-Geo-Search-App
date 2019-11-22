@@ -1,3 +1,7 @@
+.nav-bars{
+    margin:0
+}
+
 nav ul li{
 	display: block;
 	padding: 2%;
@@ -71,7 +75,9 @@ nav ul:last-child{
 DIV WITH BACKGROUND
 */
 .div-with-background{
-	margin:0px;
+    margin:0px;
+    height:300px;
+    width:100%;
 }
 
 .info{
