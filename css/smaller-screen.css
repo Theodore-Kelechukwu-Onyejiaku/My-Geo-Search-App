@@ -76,12 +76,22 @@ DIV WITH BACKGROUND
 */
 .div-with-background{
     margin:0px;
-    height:300px;
+    height:400px;
     width:100%;
+
+}
+@media screen and (max-width:800){
+	.div-with-background{
+		margin-bottom:5%;
+	}
 }
 
 .info{
 	margin: 0px;
 }
 
-
+@media all and (max-width:5000px){
+    #in{
+        font-size:3%;
+    }
+}

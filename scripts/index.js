@@ -8,11 +8,14 @@
     const collapseButton = $(".collapse-button");
     const navTwo = $("#nav-two");
     const getStarted = $("#get-started-btn");
+    const liveLocationBtn = document.getElementById("live-location-btn")
     const searchContainer = $(".search-container");
     const divWithBackground = $(".div-with-background")
     const getStartedDefinitions = $(".get-started");
     const cavetDown = $("#cavet-down");
     const getStartedCont = $(".get");
+    const myLocationMap = document.getElementById("myMap")
+
     const lct = $("#location");
 
 
@@ -53,12 +56,13 @@
     //FUNCTION FOR GETSTARTED
     getStarted.click(() =>{
         document.body.style.overflow = "scroll";
-        searchContainer.slideToggle(100);
+        searchContainer.slideToggle(500);
         divWithBackground.slideToggle(0.5);
         getStartedDefinitions.slideUp(1000);
     })
     
- 
+
+    
     //TO CORRECT THE DISAPEARANCE OF THE TOGGLE THE NAV BAR
     $(window).resize(() =>{
            // navTwo.show(); 
@@ -100,7 +104,20 @@
     }, 5000)
 
 /*********************************************************************************************************************************/
-
+//FUNCTION FOR AUTOMATIC TEXTS
+const inp = document.getElementById("in");
+	var words = "''This is the best App in the world'' - Thedore Kelechukwu Onyejiaku(Me)";
+	let i = 0;
+	setInterval(()=>{
+		if(i === words.length){
+			i = 0;
+			inp.value = "";
+		}
+		
+		inp.value = inp.value + words[i]+ "\n";
+		
+		i++
+	}, 200);
 
 
 
@@ -114,6 +131,7 @@
     //SEARCH BUTTON FUNCTION
     searchButton.click(()=>{
         $(".error").hide();
+        divWithBackground.hide();
         results.hide();
         results.empty();
         const mapId = "30ee7c92007cd37d56e1d381a4707e6a";
@@ -247,14 +265,29 @@
 
     
 
-    //LOADING OF MAP
+    //LOADING OF STATIC MAP
     const myIframe = document.getElementById("myFrame");
     const mapButton = document.querySelector(".checkMap");
  
     mapButton.addEventListener("click", ()=>{
+        myIframe.style.display = "block"
         mapButton.href = "https://www.mapquestapi.com/staticmap/v5/map?locations="+lct.val()+"&size=@2x&zoom=13&defaultMarker=marker-md-3B5998-22407F&key=Myya51vtIvyWZhqpdstw4NGWttm3PYxc";
     }) 
 
+ //FUNCTION FOR LIVE LOCATION
+ liveLocationBtn.addEventListener("click", ()=>{
+     window.scrollTo(0,10000000);
+    myLocationMap.style.display = "block";
+    var source = document.createElement("script");
+    source.src = "http://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AkeB130WJAPIJNrQ5wnmwuLmyCPpAbcAuzgm_IdKTzb0etBHsqosxUuKZWTnfc_N";
+    source.setAttribute = "async";
+    source.setAttribute ="defer";
+    document.head.appendChild(source);
+})
+function GetMap(){
+    var map = new Microsoft.Maps.Map('#myMap');
+ }
+/////////////////////////////////////
 
 
 

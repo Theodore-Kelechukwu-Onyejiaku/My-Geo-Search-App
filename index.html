@@ -6,9 +6,11 @@
 	<meta name="viewport" content="width= device-width, initial-scale=1">
 	<link rel="icon" type="icon/image" href="images/logo.png">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" media="screen and (max-width:576px)" href="css/smaller-screen.css">	
+	<link rel="stylesheet" type="text/css" media="screen and (max-width:610px)" href="css/smaller-screen.css">	
 </head>
 <body>
+	<a type="button" role="button" href="#myMap">View Location Result</a><br>
+	<iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Flocalhost%2Fgeo%2520search%2F&layout=button_count&size=large&appId=576747496463093&width=1000&height=1000" width="1000" height="1000" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
 	<!-- STATIC NAV BARS -->
 	<div class="fixed-navbar">
 		<ul>
@@ -23,7 +25,7 @@
 			<ul>
 				<li><a href="#"><img src="images/logo.png" alt="globe" title="earth" width="40" height="40">Geo Search <span class="collapse-button">&#9776;</span></a></li>
 			</ul>
-			
+			<input type="text" name="" size="60" id="in" disabled>
 			<ul id="nav-two">
 				<li><a href="#">About</a></li>
 				<li><a href="#">Guide</a></li>
@@ -33,11 +35,13 @@
 	</div>
 
 	
-	<!-- SEARCH PART --> 
+	<!-- SEARCH PART -->
+	
+<div class="wrapping">
 	<div class="search-container">
 			<div class="search-box-container">
 				<div class="search-box">
-					<input type="text" placeholder="Enter location" id="location" autofocus>
+					<input type="text" placeholder="Enter location" id="location"autofocus>
 					<button type="button" role="button" id="search-btn">&#128269;</button>
 				</div>
 			</div>		
@@ -53,7 +57,9 @@
 	<div class="get">
 		<div class="get-started-container" >
 			<button id="get-started-btn">GET STARTED</button>
-			<button id="live-location-btn">CHECK LOCATION NOW!!!</button>
+			<form>
+				<input id="live-location-btn" type="button" value="check location now!">
+			</form>
 		</div>
 	</div>
 
@@ -67,12 +73,16 @@
 	</div>
 
 <!--	MAP RESULT MAP RESULT	-->
-	<div class="checkDiv"><a target="mapFrame" class="checkMap" role="button"><button>View Static Map</button></a></div>
+	<div class="checkDiv" ><a target="mapFrame" class="checkMap" role="button"><button>View Static Map</button></a></div>
 	<center>
 		<iframe	name="mapFrame" id="myFrame" width="50%"></iframe>
 	</center>
 
+<!--	LOCATION  RESULT	-->
+<div id="myMap" style="">Please Check internet Connectionn or please Hold on</div>
 
+
+</div>
 
 <footer>
 	Theodore Kelechukwu Geo Search Project. Copyright &copy; 2019
