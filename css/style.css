@@ -448,6 +448,8 @@ div.checkDiv .checkMap{
 	min-width: 200px;
 	border:none;
 	height: 500px;
+	overflow:hidden;
+	margin:5%;
 }
 
 
@@ -499,3 +501,15 @@ footer{
 	}
 }
 
+#lct-result{
+	padding:1%;
+	border-radius:25px;
+	background-color:white;
+	border:3px solid red;
+	cursor:pointer;
+}
+#lct-result:hover{
+	background-color:red;
+	border-3px solid white;
+	color:white;
+}

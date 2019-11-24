@@ -9,8 +9,6 @@
 	<link rel="stylesheet" type="text/css" media="screen and (max-width:610px)" href="css/smaller-screen.css">	
 </head>
 <body>
-	<a type="button" role="button" href="#myMap">View Location Result</a><br>
-	<iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Flocalhost%2Fgeo%2520search%2F&layout=button_count&size=large&appId=576747496463093&width=1000&height=1000" width="1000" height="1000" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
 	<!-- STATIC NAV BARS -->
 	<div class="fixed-navbar">
 		<ul>
@@ -63,7 +61,8 @@
 		</div>
 	</div>
 
-
+	<iframe src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Flocalhost%2Fgeo%2520search%2F&layout=button_count&size=large&appId=576747496463093&width=1000&height=1000" width="1000" height="1000" style="border:none;overflow:hidden;position:fixed;top:50%;bottom:40%;right:-60%;z-index:1" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+	<a  type="button" role="button" href="#myMap" style="position:fixed;top:40%;left:85%;z-index: 1"><button id="lct-result">View Location Result</button></a><br>
 	<!-- 	DISPLAY FOR CLICKED GET STARTED	-->
 	<div  class="con">
 		<div class="results">
@@ -75,7 +74,7 @@
 <!--	MAP RESULT MAP RESULT	-->
 	<div class="checkDiv" ><a target="mapFrame" class="checkMap" role="button"><button>View Static Map</button></a></div>
 	<center>
-		<iframe	name="mapFrame" id="myFrame" width="50%"></iframe>
+		<iframe	name="mapFrame" id="myFrame" width="50%" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
 	</center>
 
 <!--	LOCATION  RESULT	-->
