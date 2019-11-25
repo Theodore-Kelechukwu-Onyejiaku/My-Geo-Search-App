@@ -5,6 +5,9 @@ body{
 #nav-two li:first-child{
     background-color:rgb(235, 10, 10);
 }
+li span.collapse-button{
+    color:red;
+}
 
 .wrapper{
     width:80%;

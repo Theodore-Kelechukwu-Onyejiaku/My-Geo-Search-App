@@ -46,7 +46,12 @@ $(document).ready(function(){
             humidityHead.style.backgroundColor = "red";		
     })
 
-
+        const collapseBtn = $(".collapse-button");
+        const divToCollapse = $("#nav-two");
+    
+    collapseBtn.click(()=>{
+        divToCollapse.slideToggle(500); 
+        })
 
 })
 
