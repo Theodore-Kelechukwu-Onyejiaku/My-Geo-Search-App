@@ -63,8 +63,7 @@ button{
 .content{
 	box-shadow: 3px 0px 3px 0px grey;
     font-weight: bolder;
-	color:white;
-	background-color:orange;
+	background-color: rgb(231, 222, 222);
 	box-sizing: border-box;
 	padding:3%;
 }
@@ -97,27 +96,12 @@ button{
     grid-template-columns: 1fr 1fr;
     grid-gap:5%;
 }
-
-.catch1{
-    float:left;
-    width:5%;
-    background-color:rgb(197, 0, 131);
-    margin:2% 3% 0% 3%;
-    text-align:center;
-    padding:2%;
-    border-radius: 100%;
-    transition:1s;
-}
-
-.catch2{
-    float:right;
-    width:5%;
-    background-color:green;
-    margin:2% 3% 0% 3%;
-    text-align:center;
-    padding:2%;
-    border-radius: 100%;
-    transition:1s;
+@media screen and (max-width :610px){
+    .container{
+        display:grid;
+        grid-template-columns: 1fr;
+        margin-bottom:300px;
+    }
 }
 
 
@@ -128,13 +112,4 @@ button{
 }
 .text1, .text2{
     color:white
-}
-
-@media screen and (max-width:576px){
-    .container{
-        grid-template-columns: 1fr;
-    }
-    .catch1{
-        display:none;
-    }
 }

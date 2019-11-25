@@ -8,28 +8,10 @@ $(document).ready(function(){
     const temperatureContent = document.querySelector(".temperature-content");
     const windContent = document.querySelector(".wind-content");
     const humidityContent = document.querySelector(".humidity-content");
-    const catchy1 = document.querySelector(".catch1");
-    const catchy2 = document.querySelector(".catch2");
+    
 
     
     
-    var deg1 = 10; 
-    setInterval(()=>{
-        catchy1.style.transform = "rotate("+deg1+"deg)";
-        deg1++;
-    }, 0.001) 
-    catchy1.addEventListener("mouseenter", ()=>{
-        catchy1.style.float = catchy1.style.float === "right" ? "left" : "right";
-    })
-
-    var deg2 = 10;
-    setInterval(()=>{
-        catchy2.style.transform = "rotate("+deg2+"deg)";
-        deg2++;
-    }, 0.001) 
-    catchy2.addEventListener("mouseenter", ()=>{
-        catchy2.style.float = catchy2.style.float === "right" ? "left" : "right";
-    })
     
     weatherContent.addEventListener("mouseenter", ()=>{
             weatherHead.style.transform = "rotate(0deg)";

@@ -1,0 +1,59 @@
+body{
+    overflow:auto
+}
+
+#nav-two li:first-child{
+    background-color:rgb(235, 10, 10);
+}
+
+.wrapper{
+    width:80%;
+    margin:2% 5% 2% 5%;
+    display:flex;
+}
+@media screen and (max-width :610px){
+    .wrapper{
+        display:grid;
+        grid-template-columns: 1fr;
+        margin-bottom:20%;
+    }
+}
+
+div h1:first-child{
+    text-align: center;
+}
+h1{
+    font-size:34px;
+}
+ol{
+    list-style-type: decimal;
+}
+ol li{
+    margin-left: 4%;
+}
+
+.top-header{
+    background-color:red;
+    color:white;
+    margin:0% 5% 0 5%;
+}
+.first {
+    background-color: rgb(231, 222, 222);
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+    padding:4%;
+    box-sizing: border-box;
+    flex-basis: 65%;
+}
+.first h1{
+    background-color:red;
+    color:white;
+}
+
+.second{
+    flex-basis:35%;
+}
+
+.second h2{
+    text-align:center;
+    color:blue;
+}
