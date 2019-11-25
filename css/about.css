@@ -11,6 +11,13 @@ body{
     margin:2% 5% 2% 5%;
     display:flex;
 }
+@media screen and (max-width :610px){
+    .wrapper{
+        display:grid;
+        grid-template-columns: 1fr;
+        margin-bottom:20%;
+    }
+}
 
 div h1:first-child{
     text-align: center;
