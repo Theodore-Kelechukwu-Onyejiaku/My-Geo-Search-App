@@ -137,7 +137,7 @@ const inp = document.getElementById("in");
         const mapId = "30ee7c92007cd37d56e1d381a4707e6a";
         
 
-        fetch("http://api.openweathermap.org/data/2.5/weather?q="+lct.val()+"&units=metric&APPID="+mapId)
+        fetch("https://api.openweathermap.org/data/2.5/weather?q="+lct.val()+"&units=metric&APPID="+mapId)
         .then((data) => {
             console.log(data);
             data.json()
@@ -279,7 +279,7 @@ const inp = document.getElementById("in");
      window.scrollTo(0,10000000);
     myLocationMap.style.display = "block";
     var source = document.createElement("script");
-    source.src = "http://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AkeB130WJAPIJNrQ5wnmwuLmyCPpAbcAuzgm_IdKTzb0etBHsqosxUuKZWTnfc_N";
+    source.src = "https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AkeB130WJAPIJNrQ5wnmwuLmyCPpAbcAuzgm_IdKTzb0etBHsqosxUuKZWTnfc_N";
     source.setAttribute = "async";
     source.setAttribute ="defer";
     document.head.appendChild(source);
