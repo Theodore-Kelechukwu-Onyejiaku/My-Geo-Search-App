@@ -20,6 +20,9 @@ li span.collapse-button{
         grid-template-columns: 1fr;
         margin-bottom:20%;
     }
+    .first{
+        width:100%;
+    }
 }
 
 div h1:first-child{
