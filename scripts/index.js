@@ -257,9 +257,9 @@ const inp = document.getElementById("in");
                     })
         })
         .catch((error) => {
-           $(".error").text(error).show();
-            console.log(error);
-            $(".error").text(error+"!!! Please check your internet connection").show()
+           $(".error").show();
+            //console.log(error);
+            $(".error").text(error+"!!! Please check your internet connection")
         })
     })
 
@@ -267,9 +267,6 @@ const inp = document.getElementById("in");
  //LOADING OF STATIC MAP
  mapButton.addEventListener("click", ()=>{
     loadStaticMap(lct.val())
- })
- window.addEventListener("load", ()=>{
-    loadStaticMap("lagos,nigeria");
  })
 
  const loadStaticMap = (value)=>{
@@ -334,3 +331,59 @@ const inp = document.getElementById("in");
 function GetMap(){
     var map = new Microsoft.Maps.Map('#myMap');
  }
+
+
+
+
+ //AUTOCOMPLETI0N
+//an event listener that lsitens for an input action
+var searchBox = document.getElementById("location")
+searchBox.addEventListener("input", () => {
+  const inputValue = searchBox.value;
+
+  //an api call with the user request to an autocomplete endpoint
+  const api = "https://api.locationiq.com/v1/autocomplete.php?";
+  axios
+    .get(api, {
+      params: { 
+        key: "8968a23d6c709b",
+        q: inputValue,
+        limit: 5,
+        crossDomain: true,
+        format: "json"
+      }
+    })
+
+    //recieves the data returned from the api call
+    .then(res => {
+      const inputValue = searchBox.value;
+      const places = res.data;
+      let suggest;
+      const autoComplete = document.querySelector("#autocomplete");
+
+      if (inputValue.length !== 0) {
+        //suggests an auto complete based on user input and displays it to the UI
+        suggest = places
+          .map(
+            place =>
+              //displays autocomplete suggestions
+              `<div class="suggest" style="text-align:center;color:white;background-color:red;font-weight:bolder;width:50%;position:relative;margin:0 20% 0 20%;display:block;cursor:pointer"> ${place.address.name},${place.address.country}</div>`
+          )
+          .join("");
+      } else {
+        suggest = [];
+      }
+
+      autoComplete.innerHTML = suggest;
+      //when any of the suggestions is clicked the value of the input is replaced with the suggestion clicked
+      document.querySelectorAll(".suggest").forEach(item => {
+        item.addEventListener("click", e => {
+          searchBox.value = e.target.innerHTML;
+          autoComplete.innerHTML = "";
+        });
+      });
+      document.querySelector("body").addEventListener("click", () => {
+        autoComplete.innerHTML = "";
+      });
+    });
+});

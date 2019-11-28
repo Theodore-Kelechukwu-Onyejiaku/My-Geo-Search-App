@@ -12,6 +12,7 @@
 	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
 	<!--Include Unwired Leaflet Plugin JavaScript file: -->
 	<script src="https://tiles.unwiredmaps.com/js/leaflet-unwired.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
 	<!-- STATIC NAV BARS -->
@@ -45,8 +46,11 @@
 	<div class="search-container">
 			<div class="search-box-container">
 				<div class="search-box">
-					<input type="text" placeholder="Enter location" id="location"autofocus>
+					<input type="text" placeholder="Enter location" id="location" autofocus autocomplete="off">
 					<button type="button" role="button" id="search-btn">&#128269;</button>
+					
+					<!--	autocomplete	-->
+					<div id="autocomplete"></div>
 				</div>
 			</div>		
 	</div>

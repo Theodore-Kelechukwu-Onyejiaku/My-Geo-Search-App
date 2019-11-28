@@ -51,6 +51,7 @@ table {
 
 .wrapping{
 	margin-bottom:40%;
+	z-index:0;
 }
 
 /* FOR NAV BAR */
@@ -263,6 +264,7 @@ DIV WITH BACKGROUND
 	font-size:300%;
 	transition:1s;
 	word-wrap: break-word;
+	z-index:0;
 }
 .div-with-background:hover{
 	opacity:1;
@@ -273,6 +275,7 @@ DIV WITH BACKGROUND
 	text-align:center;
 }*/
  .div-with-background button{
+	z-index:0;
 	cursor: pointer;
 	background-color: rgb(235, 10, 10);
 	color:white;
@@ -293,6 +296,7 @@ DIV WITH BACKGROUND
 	background:radial-gradient(red, black);
 	font-size: 150%;
 	word-wrap: break-word;
+	z-index:0;
 }
 
 
@@ -520,4 +524,13 @@ footer{
 	height: 300px;
 	margin:5%;
 	z-index:0;
+}
+
+
+
+/*	AUTO COMPLETE	*/
+.search-box #autoComplete{
+	background-color:blue;
+	color:white;
+	z-index:1;
 }
