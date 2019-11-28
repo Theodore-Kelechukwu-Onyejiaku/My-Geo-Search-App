@@ -15,8 +15,9 @@
     const cavetDown = $("#cavet-down");
     const getStartedCont = $(".get");
     const myLocationMap = document.getElementById("myMap")
-
+    const mapButton = document.querySelector(".checkMap");
     const lct = $("#location");
+    let myImg = document.getElementById("myImg");
 
 
     //SLIDING DOM
@@ -263,16 +264,64 @@ const inp = document.getElementById("in");
         })
     })
 
-    
+  
+ //LOADING OF STATIC MAP
+ mapButton.addEventListener("click", ()=>{
+    document.getElementById("myMap").innerHTML = ""
+    loadStaticMap(lct.val())
+ })
+ window.addEventListener("load", ()=>{
+    loadStaticMap("lagos,nigeria");
+ })
 
-    //LOADING OF STATIC MAP
-    const myIframe = document.getElementById("myFrame");
-    const mapButton = document.querySelector(".checkMap");
- 
-    mapButton.addEventListener("click", ()=>{
-        myIframe.style.display = "block"
-        mapButton.href = "https://www.mapquestapi.com/staticmap/v5/map?locations="+lct.val()+"&size=@2x&zoom=13&defaultMarker=marker-md-3B5998-22407F&key=Myya51vtIvyWZhqpdstw4NGWttm3PYxc";
-    }) 
+ const loadStaticMap = (value)=>{
+    let long;
+    let lat;
+
+	fetch("https://eu1.locationiq.com/v1/search.php?key=8968a23d6c709b&q="+value+"&format=json")
+	.then((data)=>{
+	data.json().
+		then((rData)=>{
+			console.log(rData[0].lat)
+			long = rData[0].lon;
+			console.log(rData[0].lon)
+			lat = rData[0].lat;
+			// API token goes here
+			var key = '8968a23d6c709b';
+
+			// Add layers that we need to the map
+			var streets = L.tileLayer.Unwired({key: key, scheme: "streets"});
+
+
+			// Initialize the map
+			var map = L.map('map', {
+			        center: [lat, long], //map loads with this location as center
+			        zoom: 13,
+			        layers: [streets] // Show 'streets' by default
+			});
+
+			// Add the 'scale' control
+			L.control.scale().addTo(map);
+
+			var marker = L.marker([lat, long]).addTo(map);
+
+			// Add the 'layers' control
+			L.control.layers({
+			    "Streets": streets
+			}).addTo(map);
+
+
+		}).
+		catch((error)=>{
+			console.log(error);
+		})
+	})
+	.catch((error)=>{
+		console.log(error);
+	})
+ }
+
+
 
  //FUNCTION FOR LIVE LOCATION
  liveLocationBtn.addEventListener("click", ()=>{
@@ -287,9 +336,3 @@ const inp = document.getElementById("in");
 function GetMap(){
     var map = new Microsoft.Maps.Map('#myMap');
  }
-/////////////////////////////////////
-
-
-
-
-    

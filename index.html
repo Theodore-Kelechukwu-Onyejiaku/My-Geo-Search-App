@@ -6,7 +6,12 @@
 	<meta name="viewport" content="width= device-width, initial-scale=1">
 	<link rel="icon" type="icon/image" href="images/logo.png">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" media="screen and (max-width:610px)" href="css/smaller-screen.css">	
+	<link rel="stylesheet" type="text/css" media="screen and (max-width:610px)" href="css/smaller-screen.css">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"/>	
+	<!-- Include Leaflet JavaScript file: -->
+	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+	<!--Include Unwired Leaflet Plugin JavaScript file: -->
+	<script src="https://tiles.unwiredmaps.com/js/leaflet-unwired.js"></script>
 </head>
 <body>
 	<!-- STATIC NAV BARS -->
@@ -71,17 +76,16 @@
 		<div class="error"></div>
 	</div>
 
-<!--	MAP RESULT MAP RESULT	-->
+<!--	STATIC MAP RESULT 		STATIC	MAP RESULT	-->
 	<div class="checkDiv" ><a target="mapFrame" class="checkMap" role="button"><button>View Static Map</button></a></div>
-	<center>
-		<iframe	name="mapFrame" id="myFrame" width="50%" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-	</center>
+	<div id="map"></div>
 
-<!--	LOCATION  RESULT	-->	
+<!--	FACEBOOK SHARE BUTTON	-->
 <center>
 	<iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Ftheodore-kelechukwu-onyejiaku.github.io%2FMy-Geo-Search-App%2F&layout=button&size=large&width=77&height=28&appId" width="77" height="28" style="border:none;overflow:hidden;margin-top:2%;margin-bottom:2%;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
 </center>
 	
+<!--	LOCATION  RESULT	-->	
 	<div id="myMap">Please Check internet Connectionn or please Hold on</div>
 
 

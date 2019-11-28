@@ -513,3 +513,11 @@ footer{
 	border:3px solid white;
 	color:white;
 }
+
+
+/*	STATIC RESULT	*/
+#map{ 
+	height: 300px;
+	margin:5%;
+	z-index:0;
+}
