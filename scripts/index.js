@@ -266,10 +266,12 @@ const inp = document.getElementById("in");
   
  //LOADING OF STATIC MAP
  mapButton.addEventListener("click", ()=>{
+     $(".wrapping").remove($("#map"));
     loadStaticMap(lct.val())
  })
 
  const loadStaticMap = (value)=>{
+     $(".checkDiv").after("<div id='map'></div>");
     let long;
     let lat;
 
@@ -367,7 +369,7 @@ searchBox.addEventListener("input", () => {
           .map(
             place =>
               //displays autocomplete suggestions
-              `<div class="suggest" style="text-align:center;color:white;background-color:red;font-weight:bolder;width:50%;position:relative;margin:0 20% 0 20%;display:block;cursor:pointer"> ${place.address.name},${place.address.country}</div>`
+              `<div class="suggest" style="width:50%;margin:0 20% 0 20%"><div style="text-align:center;color:black;background-color:rgb(231, 222, 222);font-weight:bolder;position:relative;margin-bottom:1%;display:block;cursor:pointer">${place.address.name},${place.address.country}</div></div>`
           )
           .join("");
       } else {
