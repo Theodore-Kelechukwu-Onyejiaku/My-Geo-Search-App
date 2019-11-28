@@ -17,7 +17,7 @@
     const myLocationMap = document.getElementById("myMap")
     const mapButton = document.querySelector(".checkMap");
     const lct = $("#location");
-    let myImg = document.getElementById("myImg");
+    let myMap = document.getElementById("myImg");
 
 
     //SLIDING DOM
@@ -37,7 +37,6 @@
         if(pageYOffset){
             mainNavs.css("display", "none");
             fixedNav.css("display", "block");
-            console.log("I am greater than 75");
         }else{
              mainNavs.css("display", "block");
             fixedNav.css("display", "none");
@@ -267,7 +266,6 @@ const inp = document.getElementById("in");
   
  //LOADING OF STATIC MAP
  mapButton.addEventListener("click", ()=>{
-    document.getElementById("myMap").innerHTML = ""
     loadStaticMap(lct.val())
  })
  window.addEventListener("load", ()=>{
