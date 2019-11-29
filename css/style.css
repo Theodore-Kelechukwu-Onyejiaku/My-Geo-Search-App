@@ -50,7 +50,7 @@ table {
 
 
 .wrapping{
-	margin-bottom:40%;
+	margin-bottom:0%;
 	z-index:0;
 }
 
@@ -205,7 +205,7 @@ nav ul:last-child li{
 	justify-content: center;
 }
 .get .get-started-container{
-	border-radius: 25px;
+	border-radius: 25px; 
 	display:flex;
 }
 
@@ -236,10 +236,12 @@ nav ul:last-child li{
 	width:100%;
 	outline:none;
 	height:100%;
+	padding:3%;
 }
 #get-started-btn:hover{
 	background-color:red;
 	color:white;
+	padding:3%;
 }
 
 

@@ -130,6 +130,7 @@ const inp = document.getElementById("in");
 
     //SEARCH BUTTON FUNCTION
     searchButton.click(()=>{
+        loadStaticMap(lct.val())
         $(".error").hide();
         divWithBackground.hide();
         results.hide();
@@ -245,15 +246,8 @@ const inp = document.getElementById("in");
                         results.append(windDiv);
                         results.append(humidityDiv);
                         results.append(pressureDiv);
-                        results.append(long_lat);
-                       
-
-
-                        
-
+                        results.append(long_lat);            
                         }
-
-                        
                     })
         })
         .catch((error) => {
@@ -264,13 +258,15 @@ const inp = document.getElementById("in");
     })
 
   
- //LOADING OF STATIC MAP
+ //LOADING OF STATIC 
  mapButton.addEventListener("click", ()=>{
-     $(".wrapping").remove($("#map"));
-    loadStaticMap(lct.val())
+        loadStaticMap(lct.val())
  })
 
  const loadStaticMap = (value)=>{
+    let theDiv = document.getElementById("map")
+    document.querySelector(".wrapping").removeChild(theDiv);
+ 
      $(".checkDiv").after("<div id='map'></div>");
     let long;
     let lat;
@@ -317,7 +313,7 @@ const inp = document.getElementById("in");
 		console.log(error);
 	})
  }
-
+ loadStaticMap("lagos,nigeria")
 
 
  //FUNCTION FOR LIVE LOCATION
@@ -369,7 +365,7 @@ searchBox.addEventListener("input", () => {
           .map(
             place =>
               //displays autocomplete suggestions
-              `<div class="suggest" style="width:50%;margin:0 20% 0 20%"><div style="text-align:center;color:black;background-color:rgb(231, 222, 222);font-weight:bolder;position:relative;margin-bottom:1%;display:block;cursor:pointer">${place.address.name},${place.address.country}</div></div>`
+              `<div class="suggest" style="width:50%;margin:0 20% 0 20%"><div style="text-align:center;color:black;background-color:yellow;font-weight:bolder;position:relative;border-bottom:3px solid rgb(231, 222, 222);display:block;cursor:pointer">${place.address.name},${place.address.country}</div></div>`
           )
           .join("");
       } else {
