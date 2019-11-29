@@ -524,7 +524,7 @@ footer{
 /*	STATIC RESULT	*/
 #map{ 
 	height: 300px;
-	margin:5%;
+	margin:1% 5% 0% 5%;
 	z-index:0;
 }
 
