@@ -152,7 +152,6 @@ const inp = document.getElementById("in");
                                 "width": "100%",
                                 "height": "100%",
                             });
-                            console.log("city not found");
                              $(".error").text("Ooops! "+recievedData.message).show();
                              $(".error").append(img);
                         }else{ 
