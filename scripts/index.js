@@ -144,7 +144,7 @@ const inp = document.getElementById("in");
             data.json()
                     .then((recievedData) => {
                         console.log(recievedData);
-                        if(recievedData.message){   //IF there is a 404 message then this block of code will execute
+                        if(recievedData.message){   
                             results.textContent = "";
                             let img = document.createElement("img");
                             img.src = "./images/404.png";
@@ -152,11 +152,10 @@ const inp = document.getElementById("in");
                                 "width": "100%",
                                 "height": "100%",
                             });
-                             $(".error").text("Ooops! "+recievedData.message).show();
+                             $(".error").text("Ooops! Weather report not found").show();
                              $(".error").append(img);
                         }else{ 
                         $(".error").text("");
-                        console.log("I have recieved the data");
                         $(".results").show(); 
 
 
@@ -251,7 +250,6 @@ const inp = document.getElementById("in");
         })
         .catch((error) => {
            $(".error").show();
-            //console.log(error);
             $(".error").text(error+"!!! Please check your internet connection")
         })
     })

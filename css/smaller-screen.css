@@ -46,7 +46,7 @@ nav ul:last-child{
 .get .get-started-container{
 	border-radius: 25px;
     display:grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
 }
 #get-started-btn{
    width:100%;
@@ -69,6 +69,14 @@ nav ul:last-child{
 .error{
     width: 90%;,
 }
+
+
+
+.wrapping{
+	margin-bottom:60%;
+	z-index:0;
+}
+
 
 
 /***********************************************************************888/

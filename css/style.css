@@ -70,7 +70,7 @@ table {
 .fixed-navbar ul li{
 	padding:3%;
 	box-sizing: border-box;
-	background-color: red;
+	background-color:red;
 	color: rgba(11,11,11);
 }
 .fixed-navbar ul li:hover{
@@ -211,19 +211,19 @@ nav ul:last-child li{
 
 #live-location-btn{
 	cursor:pointer;
-	padding:2%;
+	padding:3%;
 	color:white;
 	border-radius: 25px;
 	color:red;
 	background-color:white;
 	border:3px solid red;
-	width: 100%;
+	width: 100px;
 	outline: none;
 	height: 100%;
 }
 #live-location-btn:hover{
 	background-color:red;
-	border:3px solid red;
+	border:3px solid white;
 	color:white;
 }
 
@@ -233,15 +233,15 @@ nav ul:last-child li{
 	color:red;
 	background-color:white;
 	border:3px solid red;
-	width:100%;
+	width:100px;
 	outline:none;
 	height:100%;
 	padding:3%;
 }
 #get-started-btn:hover{
 	background-color:red;
+	border:3px solid white;
 	color:white;
-	padding:3%;
 }
 
 
